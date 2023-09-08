@@ -15,7 +15,7 @@ Curious about **Google Cloud services**? Join **Code Vipassana** for real-time i
 
 ## Live Demo
 
-The live application is can be tested out in this URL : 
+The live application is can be tested out in this URL : [App Link](https://vertex-summarizer-svelte-n7c4raaeaq-uc.a.run.app/)\
 **Dont spam**
 
 
