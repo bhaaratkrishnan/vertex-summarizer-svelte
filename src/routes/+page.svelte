@@ -1,12 +1,16 @@
 <script lang="ts">
   import { PUBLIC_FUNCTION_URL } from "$env/static/public";
   import TextareaComponent from "$lib/textarea-component.svelte";
+
   let inputText: String = "";
   let outputText: String = "";
   let loadingState: boolean = false;
+  let file: HTMLInputElement;
+
   async function summarizeText() {
     loadingState = true;
     console.log(inputText);
+
     const response = await fetch(PUBLIC_FUNCTION_URL, {
       method: "POST",
       body: JSON.stringify(inputText),
@@ -14,13 +18,26 @@
     outputText = await response.text();
     loadingState = false;
   }
+
+  async function fileUpload() {
+    if (file.files !== null) {
+      // inputText = await file.files[0].text();
+      inputText = await file.files[0].text();
+    }
+  }
 </script>
+
+<!-- head  -->
+<svelte:head>
+  <title>Vertex Summarizer</title>
+</svelte:head>
 
 <div class="bg-gray-100 min-h-screen">
   <!-- navbar  -->
   <div
     class="flex flex-row items-center space-x-4 bg-blue-600 text-white p-4 shadow-lg font-bold text-3xl mb-4 lg:mb-16"
   >
+    <!-- google cloud logo  -->
     <img
       class="w-8 h-8"
       src="https://www.gend.co/hs-fs/hubfs/gcp-logo-cloud.png?width=730&name=gcp-logo-cloud.png"
@@ -40,12 +57,28 @@
     />
     <!-- stats area  -->
     <div class="flex flex-col space-y-8 items-center justify-center">
+      <!-- summarize button  -->
       <button
+        disabled={loadingState}
         on:click={summarizeText}
         class="bg-blue-600 hover:scale-105 transition text-white font-bold text-xl h-fit p-4 rounded-lg"
       >
         {loadingState ? "Processing" : "Summarize"}
       </button>
+      <!-- file input  -->
+      <label
+        for="upload-file"
+        class="bg-blue-600 cursor-pointer p-4 rounded-lg hover:scale-105 transition ease-in-out text-xl font-bold text-white"
+        >Upload File (.txt)</label
+      >
+      <input
+        id="upload-file"
+        type="file"
+        accept=".txt"
+        on:change={fileUpload}
+        bind:this={file}
+        hidden
+      />
       <!-- input characters  -->
       <div
         class="text-xl hover:scale-105 transition font-bold text-center bg-white text-blue-600 p-4 rounded-lg"
@@ -68,7 +101,10 @@
   <div
     class="bg-blue-600 flex-row flex text-white p-4 shadow-lg text-xl mt-4 lg:mt-16 sticky top-[100vh]"
   >
-    <a href="https://github.com/bhaaratkrishnan/vertex-summarizer-svelte" target="_blank">
+    <a
+      href="https://github.com/bhaaratkrishnan/vertex-summarizer-svelte"
+      target="_blank"
+    >
       <div>Made by Bhaarat Krishnan</div>
     </a>
   </div>
