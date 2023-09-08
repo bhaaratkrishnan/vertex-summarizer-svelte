@@ -8,10 +8,10 @@ RUN npm install
 
 COPY . /app/
 
-ENV PUBLIC_FUNCTION_URL=https://us-central1-cv3-serverless-web-apis.cloudfunctions.net/vertex-ai-test
+ENV PUBLIC_FUNCTION_URL=$FUNCTION_URL
 
 EXPOSE 3000
 
 RUN npm run build
 
-CMD ["node","./build/index.js"]
+CMD ["node","./build"]
