@@ -1,38 +1,61 @@
-# create-svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# Vertex Summarizer
 
-## Creating a project
+Vertex Summarizer is a text summarization tool that utilizes Google Cloud's Vertex AI API and Cloud Functions. This application is developed with SvelteKit and deployed using Cloud Run.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Curious about **Google Cloud services**? Join **Code Vipassana** for real-time implementations and practical use cases. \
+[Know More]()
+
+
+
+## Documentation
+
+[Codelab Link ](https://linktodocumentation) \
+[Medium Blog Link ](https://linktodocumentation)
+
+## Live Demo
+
+The live application is can be tested out in this URL : 
+**Dont spam**
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your Dockerfile. 
+
+`PUBLIC_FUNCTION_URL` - Google Cloud Function URL.
+
+## Run Locally
+
+Clone the project
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+  git clone https://github.com/bhaaratkrishnan/vertex-summarizer-svelte.git
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Go to the project directory
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+  cd vertex-summarizer-svelte
 ```
 
-## Building
-
-To create a production version of your app:
+Install dependencies
 
 ```bash
-npm run build
+  npm install
 ```
 
-You can preview the production build with `npm run preview`.
+Start the server
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+  npm run dev
+```
+
+
+## Related
+
+Here are some related projects
+### Serverless Services in Google Cloud Platform
+- [Serverless Web APIs Blog](https://medium.com/google-cloud/implementation-of-serverless-web-apis-codelab-56f2068c56c) 
+- [Serverless Web APIs Codelab](https://codelabs.developers.google.com/codelabs/serverless-web-apis#0)
+
