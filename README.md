@@ -10,7 +10,7 @@ Curious about **Google Cloud services**? Join **Code Vipassana** for real-time i
 
 ## Documentation
 
-[Codelab Link ](https://linktodocumentation) \
+[Codelab Link ]([https://linktodocumentation](https://codelabs.developers.google.com/textsummarizer-llm-vertex-svelte#0)) \
 [Medium Blog Link ](https://medium.com/google-cloud/google-cloud-vertex-ai-and-svelte-kit-vertex-summarizer-5db792d0d80e)
 
 ## Live Demo
